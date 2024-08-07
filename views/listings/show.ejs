@@ -4,7 +4,7 @@
   <h3 class="text-center"><%= listing.title %></h3>
   <div class="col-8 offset-2">
     <div class="card listing-card">
-      <img src="<%= listing.image %>" class="card-img-top show-img" alt="..." />
+      <img src="<%= listing.image %>" class="card-img-top show-img" style="height: 30rem;" alt="..." />
       <div class="card-body">
         <p class="card-text">
           <%= listing.description %><br />
@@ -68,12 +68,18 @@
         <div class="card-body">
           <h5 class="card-title">John Doe</h5>
           <p class="card-text"><%= review.comment %></p>
-          <p class="card-text"><%= review.rating %> star</p>
+          <p class="card-text mb-3"><%= review.rating %> star</p>
         </div>
+        <form
+          method="POST"
+          action="/listings/<%= listing.id %>/reviews/<%= review.id %>?_method=DELETE"
+          class="mb-2"
+        >
+          <button class="btn btn-sm btn-dark">Delete</button>
+        </form>
       </div>
       <% } %>
     </div>
-
   </div>
 </div>
 <br />
