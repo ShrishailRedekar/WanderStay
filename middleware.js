@@ -1,9 +1,8 @@
-const Listing = require("./models/listing")
+const Listing = require("./models/listing");
 const Review = require("./models/review.js");
 const ExpressError = require("./utils/ExpressError.js");
 const { listingSchema } = require("./schema.js");
 const { reviewSchema } = require("./schema.js");
-const review = require("./models/review.js");
 
 // middleware for check user logged in or not
 module.exports.isLoggedIn = (req, res, next) => {
@@ -13,16 +12,16 @@ module.exports.isLoggedIn = (req, res, next) => {
     req.flash("error", "you must be logged in to create listing!");
     res.redirect("/login");
   }
-  next()
+  next();
 };
 
 // passport automatically reset the session after logged in so store the redirectUrl in locals res variable
 module.exports.saveRedirectUrl = (req, res, next) => {
-  if(req.session.redirectUrl){
+  if (req.session.redirectUrl) {
     res.locals.redirectUrl = req.session.redirectUrl;
   }
-  next()
-}
+  next();
+};
 
 module.exports.validateReview = (req, res, next) => {
   let { error } = reviewSchema.validate(req.body);
@@ -47,23 +46,23 @@ module.exports.validateListing = (req, res, next) => {
 };
 
 // Authorization set to listings
-module.exports.isOwner = async(req, res, next) => {
+module.exports.isOwner = async (req, res, next) => {
   let { id } = req.params;
   let listing = await Listing.findById(id);
   if (!listing.owner._id.equals(res.locals.currUser._id)) {
     req.flash("error", "you are not the owner of this listing");
     return res.redirect(`/listings/${id}`);
   }
-  next()
-}
+  next();
+};
 
 // Authorization set to Review
-module.exports.isReviewAuthor = async(req, res, next) => {
+module.exports.isReviewAuthor = async (req, res, next) => {
   let { id, reviewId } = req.params;
   let review = await Review.findById(reviewId);
   if (!review.author._id.equals(res.locals.currUser._id)) {
     req.flash("error", "you are not the author of this review");
     return res.redirect(`/listings/${id}`);
   }
-  next()
-}
+  next();
+};
