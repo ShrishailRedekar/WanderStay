@@ -15,8 +15,7 @@ const User = require("./models/user.js");
 // require Routes
 const listingRoutes = require("./routes/listingRoutes.js");
 const reviewRoutes = require("./routes/reviewRoutes.js");
-const signupRoute = require("./routes/signupRoute.js");
-const loginRoute = require("./routes/loginRoute.js");
+const usersRoute = require("./routes/usersRoute.js");
 
 main()
   .then(() => {
@@ -79,8 +78,7 @@ app.use((req, res, next) => {
 // restructuring listing and review to seperate folder
 app.use("/listings", listingRoutes);
 app.use("/listings/:id", reviewRoutes);
-app.use("/", signupRoute);
-app.use("/", loginRoute);
+app.use("/", usersRoute);
 
 // if route not exist
 app.all("*", (req, res, next) => {
