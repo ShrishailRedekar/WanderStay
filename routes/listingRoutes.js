@@ -19,7 +19,6 @@ router.get("/new", isLoggedIn, listingController.newForm);
 router.post(
   "/",
   isLoggedIn, //middleware - check user logged in or not
- 
   upload.single("listing[image]"),
   validateListing, //middleware
   wrapAsync(listingController.createListing)
@@ -41,6 +40,7 @@ router.put(
   "/:id",
   isLoggedIn,
   isOwner,
+  upload.single("listing[image]"),
   validateListing,
   wrapAsync(listingController.updateListing)
 );
