@@ -32,7 +32,7 @@ router.get(
   "/:id/edit",
   isLoggedIn,
   isOwner,
-  wrapAsync(listingController.editListing)
+  wrapAsync(listingController.editForm)
 );
 
 // Update Route

@@ -28,18 +28,23 @@
           <label for="description" class="form-label">Description</label>
           <textarea name="listing[description]" class="form-control" required>
             <%= listing.description %>
-            </textarea>
+            </textarea
+          >
 
           <div class="invalid-feedback">Please enter a short description</div>
         </div>
         <br />
         <div>
-          <label for="image" class="form-label">Upload new Image</label>
-          <input
-            type="file"
-            name="listing[image]"
-            class="form-control"
+          Original Listing Image <br />
+          <img
+            src="<%= listing.image.url %>"
+            style="height: 150px; width: 165px"
           />
+        </div>
+        <br />
+        <div>
+          <label for="image" class="form-label">Upload new Image</label>
+          <input type="file" name="listing[image]" class="form-control" />
         </div>
         <br />
         <div class="row">

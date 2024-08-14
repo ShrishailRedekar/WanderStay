@@ -39,7 +39,7 @@ module.exports.showListing = async (req, res) => {
   res.render("listings/show.ejs", { listing });
 };
 
-module.exports.editListing = async (req, res) => {
+module.exports.editForm = async (req, res) => {
   let { id } = req.params;
   const listing = await Listing.findById(id);
 
@@ -47,7 +47,6 @@ module.exports.editListing = async (req, res) => {
     req.flash("error", "Listing you requested for does not exist!");
     res.redirect("/listings");
   }
-
   res.render("listings/edit.ejs", { listing });
 };
 
