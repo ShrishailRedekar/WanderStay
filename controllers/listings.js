@@ -1,8 +1,26 @@
 const Listing = require("../models/listing.js");
 
 module.exports.index = async (req, res) => {
-  const allListings = await Listing.find({});
-  res.render("listings/index.ejs", { allListings });
+    const allListings = await Listing.find();
+    const { country } = req.query;
+    // Filter listings based on the country
+    const cityListings = country
+      ? allListings.filter(
+          (listing) => 
+            listing.country.toLowerCase() === country.toLowerCase()
+        )
+      : allListings;
+
+    res.render("listings/index.ejs", { allListings: cityListings, country });
+  };
+
+module.exports.filterListings = async (req, res) => {
+  let category = req.query.filter;
+  let allListings = await Listing.find({ category: category });
+  res.render("listings/category.ejs", {
+    allListings: allListings,
+    category: category,
+  });
 };
 
 module.exports.newForm = (req, res) => {

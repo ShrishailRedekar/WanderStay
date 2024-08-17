@@ -21,10 +21,15 @@ const listingSchema = new Schema({
       ref: "Review",
     },
   ],
-  owner:{
+  owner: {
     type: Schema.Types.ObjectId,
-    ref: "User"
-  }
+    ref: "User",
+  },
+  category: {
+    type: String,
+    required: true,
+    enum: ["Beach", "Rooms", "Iconic cities", "Mountains", "Castles", "pools", "Camping", "Farms", "Arctic", "Domes", "Boats", "Other"]
+}
 });
 
 // post mongoose middleware - Delete listing with it's reviews

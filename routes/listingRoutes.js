@@ -12,6 +12,9 @@ const listingController = require("../controllers/listings.js");
 // Index Route
 router.get("/", wrapAsync(listingController.index));
 
+// category Route
+router.get("/category", wrapAsync(listingController.filterListings));
+
 // New Route Form
 router.get("/new", isLoggedIn, listingController.newForm);
 
