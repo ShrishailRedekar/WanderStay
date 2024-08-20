@@ -17,3 +17,29 @@
     }, false)
   })
 })()
+
+
+// Fillter Icons
+const filters = document.querySelectorAll(".filter");
+filters.forEach((filter) => {
+  filter.addEventListener("click", () => {
+    const category = filter.querySelector("p").textContent;
+    window.location.href = `/listings/category?filter=${category}`;
+  });
+});
+
+
+// Scroll Icons
+// let scrollContainer = document.getElementById("filters");
+// let backBtn = document.getElementById("backBtn");
+// let rightBtn = document.getElementById("rightBtn");
+
+// nextBtn.addEventListener("click", () =>{
+//   scrollContainer.style.scrollBehavior = "smooth"
+//   scrollContainer.scrollLeft += 100;
+// })
+
+// backBtn.addEventListener("click", () =>{
+//   scrollContainer.style.scrollBehavior = "smooth"
+//   scrollContainer.scrollLeft -= 100;
+// })

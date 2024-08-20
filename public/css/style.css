@@ -1,5 +1,4 @@
 body {
-  background-color: whitesmoke;
   font-family: "Plus Jakarta Sans", sans-serif;
   display: flex;
   flex-direction: column;
@@ -13,18 +12,28 @@ body {
 /* Navbar */
 .navbar {
   height: 4.2rem;
-  background-color: rgba(255, 255, 255, 0.502);
-  backdrop-filter: blur(40px);
-}
-
-.fa-compass {
-  font-size: 2rem;
-  color: #ff5a5f;
 }
 
 .nav-link {
   color: #222;
   margin-left: 1rem;
+  border-radius: 2rem;
+  text-align: center;
+  background-color: rgb(249, 249, 249);
+}
+
+.navbar-nav{
+  background-color: rgb(249, 249, 249);
+}
+
+.nav-link:hover {
+  color: whitesmoke;
+  background-color: #ff5a5f;
+  box-shadow: 0px 0px 3px 0.4px rgba(0, 0, 0, 0.66);
+}
+
+.nav-link:active {
+  box-shadow: none;
 }
 
 .btn-search {
@@ -35,8 +44,13 @@ body {
   box-shadow: 0px 0px 3px 0.4px rgba(0, 0, 0, 0.66);
   font-size: 0.9rem;
 }
+
+.btn-search:active {
+  box-shadow: none;
+}
+
 .btn-search i {
- padding: 0 0.43rem 0 0.43rem;
+  padding: 0 0.43rem 0 0.43rem;
 }
 .search-input {
   border-radius: 2rem;
@@ -52,10 +66,11 @@ body {
   padding: 0.4rem 1rem;
   border-radius: 0.5rem;
   text-decoration: none;
+  box-shadow: 0px 0px 3px 0.4px rgba(0, 0, 0, 0.753);
 }
 
-.Btn:hover{
-  box-shadow: 0px 0px 3px 0.4px rgba(0, 0, 0, 0.77);
+.Btn:active {
+  box-shadow: none;
 }
 
 .btns {
@@ -140,21 +155,50 @@ body {
 }
 
 /* filters */
+/* .filter-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+} */
+
 #filters {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
+
 .filter {
   text-align: center;
-  margin-right: 2rem;
   opacity: 0.7;
+  margin:0 0.7rem;
+  display: inline-block;
 }
+
 .filter:hover {
   opacity: 1;
   cursor: pointer;
 }
+
 .filter p {
   font-size: small;
 }
+
+/* #backBtn {
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+}
+#nextBtn {
+  font-size: 1.6rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+}
+#backBtn:hover,
+#nextBtn:hover {
+  color: #00a699;
+  opacity: 1;
+} */

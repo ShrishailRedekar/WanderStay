@@ -28,8 +28,23 @@ const listingSchema = new Schema({
   category: {
     type: String,
     required: true,
-    enum: ["Beach", "Rooms", "Iconic cities", "Mountains", "Castles", "pools", "Camping", "Farms", "Arctic", "Domes", "Boats", "Other"]
-}
+    enum: [
+      "Beach",
+      "Cottage",
+      "Cities",
+      "Mountains",
+      "Castles",
+      "Pools",
+      "Camping",
+      "Farms",
+      "Arctic",
+      "Domes",
+      "Boats",
+      "Van",
+      "Tower",
+      "Other",
+    ],
+  },
 });
 
 // post mongoose middleware - Delete listing with it's reviews

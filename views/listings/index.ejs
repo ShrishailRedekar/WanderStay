@@ -1,59 +1,67 @@
 <% layout("/layouts/boilerplate") %>
 
-<div id="filters">
-  <div class="filter mt-3">
-    <div><i class="fa-solid fa-umbrella-beach"></i></div>
-    <p>Beach</p>
+  <div id="filters">
+    <div class="filter mt-3">
+      <div><i class="fa-solid fa-umbrella-beach"></i></div>
+      <p>Beach</p>
+    </div>
+    <div class="filter mt-3">
+      <div><i class="fa-solid fa-house"></i></div>
+      <p>Cottage</p>
+    </div>
+    <div class="filter mt-3">
+      <div><i class="fa-solid fa-city"></i></div>
+      <p>Cities</p>
+    </div>
+    <div class="filter mt-3">
+      <div><i class="fa-solid fa-mountain"></i></div>
+      <p>Mountains</p>
+    </div>
+    <div class="filter mt-3">
+      <div><i class="fa-brands fa-fort-awesome"></i></div>
+      <p>Castles</p>
+    </div>
+    <div class="filter mt-3">
+      <div><i class="fa-solid fa-person-swimming"></i></div>
+      <p>Pools</p>
+    </div>
+    <div class="filter mt-3">
+      <div><i class="fa-solid fa-campground"></i></div>
+      <p>Camping</p>
+    </div>
+    <div class="filter mt-3">
+      <div><i class="fa-solid fa-tractor"></i></div>
+      <p>Farms</p>
+    </div>
+    <div class="filter mt-3">
+      <div><i class="fa-regular fa-snowflake"></i></div>
+      <p>Arctic</p>
+    </div>
+    <div class="filter mt-3">
+      <div><i class="fa-solid fa-igloo"></i></div>
+      <p>Domes</p>
+    </div>
+    <div class="filter mt-3">
+      <div><i class="fa-solid fa-ship"></i></div>
+      <p>Boats</p>
+    </div>
+    <div class="filter mt-3">
+      <i class="fa-solid fa-van-shuttle"></i>
+      <p>Van</p>
+    </div>
+    <div class="filter mt-3">
+      <i class="fa-solid fa-tower-observation"></i>
+      <p>Tower</p>
+    </div>
+    <div class="filter mt-3">
+      <i class="fa-solid fa-ellipsis"></i>
+      <p>Other</p>
+    </div>
   </div>
-  <div class="filter mt-3">
-    <div><i class="fa-solid fa-bed"></i></div>
-    <p>Rooms</p>
-  </div>
-  <div class="filter mt-3">
-    <div><i class="fa-solid fa-city"></i></div>
-    <p>Iconic cities</p>
-  </div>
-  <div class="filter mt-3">
-    <div><i class="fa-solid fa-mountain"></i></div>
-    <p>Mountains</p>
-  </div>
-  <div class="filter mt-3">
-    <div><i class="fa-brands fa-fort-awesome"></i></div>
-    <p>Castles</p>
-  </div>
-  <div class="filter mt-3">
-    <div><i class="fa-solid fa-person-swimming"></i></div>
-    <p>Pools</p>
-  </div>
-  <div class="filter mt-3">
-    <div><i class="fa-solid fa-campground"></i></div>
-    <p>Camping</p>
-  </div>
-  <div class="filter mt-3">
-    <div><i class="fa-solid fa-tractor"></i></div>
-    <p>Farms</p>
-  </div>
-  <div class="filter mt-3">
-    <div><i class="fa-regular fa-snowflake"></i></div>
-    <p>Arctic</p>
-  </div>
-  <div class="filter mt-3">
-    <div><i class="fa-solid fa-igloo"></i></div>
-    <p>Domes</p>
-  </div>
-  <div class="filter mt-3">
-    <div><i class="fa-solid fa-ship"></i></div>
-    <p>Boats</p>
-  </div>
-  <div class="filter mt-3">
-    <i class="fa-solid fa-ellipsis"></i>
-    <p>Other</p>
-  </div>
-</div>
 
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
   <% for(let listing of allListings) { %>
-  <a href="/listings/<%= listing.id %>"  class="cardLink">
+  <a href="/listings/<%= listing.id %>" class="cardLink">
     <div class="card col listing-card">
       <img
         src="<%= listing.image.url %>"
@@ -73,13 +81,3 @@
   </a>
   <% } %>
 </div>
-
-<script>
-  const filters = document.querySelectorAll(".filter");
-  filters.forEach((filter) => {
-    filter.addEventListener("click", () => {
-      const category = filter.querySelector("p").textContent;
-      window.location.href = `/listings/category?filter=${category}`;
-    });
-  });
-</script>

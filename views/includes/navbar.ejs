@@ -1,7 +1,18 @@
-<nav class="navbar navbar-expand-sm sticky-top">
+<nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings">
-      <i class="fa-regular fa-compass"></i>
+      <img
+        src="https://res.cloudinary.com/dezmsqzsw/image/upload/v1724145145/logo_jch7re.png"
+        alt="logo"
+        width="60"
+        height="50"
+      />&nbsp;
+      <img
+      src="https://res.cloudinary.com/dezmsqzsw/image/upload/v1724145130/wonderstay_pu7z68.png"
+      alt="logo"
+      width="140"
+      height="44"
+    />
     </a>
 
     <button
@@ -14,24 +25,21 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/listings">Explore</a>
-      </div>
 
       <div class="navbar-nav ms-auto">
-      <form class="d-flex" role="search" action="/listings" method="get">
-        <input
-          class="form-control me-2 search-input"
-          name="country"
-          type="search"
-          placeholder="Search country"
-          aria-label="Search"
-        />
-        <button class="btn-search" type="submit">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </form>
-    </div>
+        <form class="d-flex" role="search" action="/listings" method="get">
+          <input
+            class="form-control me-2 search-input"
+            name="country"
+            type="search"
+            placeholder="Search country"
+            aria-label="Search"
+          />
+          <button class="btn-search" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
 
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new"> Your Home </a>
