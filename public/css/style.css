@@ -27,9 +27,7 @@ body {
 }
 
 .nav-link:hover {
-  color: whitesmoke;
-  background-color: #ff5a5f;
-  box-shadow: 0px 0px 3px 0.4px rgba(0, 0, 0, 0.66);
+  text-decoration:underline 2px #ff5a5f;
 }
 
 .nav-link:active {
