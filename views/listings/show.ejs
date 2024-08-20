@@ -2,7 +2,7 @@
 
 <div class="row mt-3">
   <h3 class="text-center"><%= listing.title %></h3>
-  <div class="col-10 row-8 offset-1">
+  <div class="col-15">
     <div class="card listing-card">
       <img
         src="<%= listing.image.url %>"
@@ -83,7 +83,7 @@
     <% } %>
     <p><b>All Reviews</b></p>
   </div>
-  <div class="row row-cols-md-3 row-cols-sm-1 offset-1" >
+  <div class="row row-cols-md-3 row-cols-sm-1 offset-1">
     <%for(review of listing.reviews) {%>
     <div class="card col-6 ms-3 mb-3 reviews">
       <div class="card-body">
