@@ -155,13 +155,6 @@ body {
 }
 
 /* filters */
-/* .filter-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-} */
-
 #filters {
   display: flex;
   flex-wrap: wrap;
@@ -184,21 +177,3 @@ body {
 .filter p {
   font-size: small;
 }
-
-/* #backBtn {
-  font-size: 1.6rem;
-  margin-right: 1rem;
-  cursor: pointer;
-  opacity: 0.8;
-}
-#nextBtn {
-  font-size: 1.6rem;
-  margin-left: 1rem;
-  cursor: pointer;
-  opacity: 0.8;
-}
-#backBtn:hover,
-#nextBtn:hover {
-  color: #00a699;
-  opacity: 1;
-} */

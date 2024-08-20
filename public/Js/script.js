@@ -27,19 +27,3 @@ filters.forEach((filter) => {
     window.location.href = `/listings/category?filter=${category}`;
   });
 });
-
-
-// Scroll Icons
-// let scrollContainer = document.getElementById("filters");
-// let backBtn = document.getElementById("backBtn");
-// let rightBtn = document.getElementById("rightBtn");
-
-// nextBtn.addEventListener("click", () =>{
-//   scrollContainer.style.scrollBehavior = "smooth"
-//   scrollContainer.scrollLeft += 100;
-// })
-
-// backBtn.addEventListener("click", () =>{
-//   scrollContainer.style.scrollBehavior = "smooth"
-//   scrollContainer.scrollLeft -= 100;
-// })
